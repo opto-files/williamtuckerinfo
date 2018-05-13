@@ -4,11 +4,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Vollkorn" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Vollkorn|Yeseva+One" rel="stylesheet">
 <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-<title>CHANGE ME TO THE TITLE OF YOUR ARTICLE</title>
+<title>William Tucker</title>
 
 </head>
 
@@ -17,8 +17,9 @@
 
 	$(document).ready( function() {
 
-		$("#blog").load("texts/home.html"); // POINT ME TOWARDS YOUR ARTICLE'S HTML FILE. HAVE YOU COMPILED THE SITE?
-		$("#nav").load("/texts/nav.html"); // POINT ME TOWARDS YOUR NAVIGATION LIST. HAVE YOU UPDATED IT TO INCLUDE THIS PAGE?
+		$("#blog").load("texts/home.html");
+		$("#nav").load("/texts/nav.html");
+		$("#footer").load("feet.html");
 		
 	} )
 
@@ -37,8 +38,6 @@
 		</div>
 
 		<div class = "row" id = "footer">
-			<div class = "col-md-1 offset-md-3" id = "git"><a href = "https://github.com/opto-files/"><i class="fab fa-github fa-2x"></i></a></div>
-			<div class = "col-md-1" id = "twitter"><a href = "https://twitter.com/tukr_"><i class="fab fa-twitter fa-2x"></i></a></div>
 		</div>
 	</div>
 </body>
