@@ -1,0 +1,98 @@
+:root {
+	--bg: #FEFFFC;
+	--deep: #DAE5DE;
+	--main: #2C353A;
+	--hover: #949F9E;
+	--highlight: #4BA2D8;
+
+}
+
+body {
+	background-color: var(--bg) !important;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+#head {
+	padding-top: 50px;
+}
+
+#header a {
+	color: var(--main) !important;
+	font-family: 'Vollkorn', cursive;
+	font-size: 32px;
+}
+
+#header a:hover {
+	color: var(--hover) !important;
+	text-decoration: none;
+}
+
+
+#content {
+	padding-top: 50px;
+}
+
+
+#nav {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+}
+
+#nav ul {
+
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#nav li {
+	margin: 10px 0px;
+}
+
+#nav a:link {
+	color: var(--main) !important;
+}
+
+#nav a:hover {
+	color: var(--hover) !important;
+	text-decoration: none;
+}
+
+#nav a:visited {
+	color: var(--hover) !important;
+}
+
+#blog {
+	font-family: 'Vollkorn', serif;
+	color: var(--main) !important;
+}
+
+#blog a {
+	color: var(--highlight) !important;
+}
+
+#blog p {
+
+	font-family: 'Open Sans', sans-serif;
+}
+
+#blog blockquote {
+	border-left: 5px solid var(--deep) !important;
+	padding: 0.5em 10px;
+}
+
+#blog blockquote p {
+	font-family: 'Vollkorn', serif;
+}
+
+#footer {
+	margin-top: 20px;
+}
+
+.fab {
+	color: var(--main) !important;
+}
+
+.fab:hover {
+	color: var(--hover) !important;
+}

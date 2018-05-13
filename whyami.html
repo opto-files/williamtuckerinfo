@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Vollkorn" rel="stylesheet">
+<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<title>Why Am I Learning Math and Haskell? (And Not Learning to Draw)</title>
+
+</head>
+
+
+<script>
+
+	$(document).ready( function() {
+
+		$("#blog").load("texts/why.html"); // POINT ME TOWARDS YOUR ARTICLE'S HTML FILE. HAVE YOU COMPILED THE SITE?
+		$("#nav").load("/texts/nav.html"); // POINT ME TOWARDS YOUR NAVIGATION LIST. HAVE YOU UPDATED IT TO INCLUDE THIS PAGE?
+		
+	} )
+
+</script>
+
+<body>
+	<div class = "container">
+		<div class = "row" id = "head">
+			<div class = "col-md-12" id = "header"><a href="index.html">William Tucker</a></div>
+		</div>
+	
+
+		<div class = "row" id = "content">
+			<div class = "col-md-3" id = "nav"></div>
+			<div class = "col-md-7" id = "blog"></div>
+		</div>
+
+		<div class = "row" id = "footer">
+			<div class = "col-md-1 offset-md-3" id = "git"><a href = "https://github.com/opto-files/"><i class="fab fa-github fa-2x"></i></a></div>
+			<div class = "col-md-1" id = "twitter"><a href = "https://twitter.com/tukr_"><i class="fab fa-twitter fa-2x"></i></a></div>
+		</div>
+	</div>
+</body>
+</html>
