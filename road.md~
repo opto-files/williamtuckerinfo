@@ -1,0 +1,7 @@
+Haskell Road To Logic, Maths and Programming: First Impressions
+===============================================================
+
+To start my journey into studying Maths and Haskell I've chosen two resources. Firstly I am going to work through the lectures for MIT's course *Mathematics for Computer Science* which are publically available (and seem to be the most accessible discrete maths introduction online. Secondly, to supplement some more Maths and learning the basics of Haskell I am using [**The Haskell Road to Logic, Maths and Programming - Doets & van Eijck**](https://homepages.cwi.nl/~jve/HR/#Solutions).
+
+I've just worked through the first chapter, which is a kind of getting-to-grips introduction to Haskell syntax and workflow. I found it very informative and well laid out (with only one exception) - it also had me thinking about my time in Scheme.
+
