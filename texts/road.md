@@ -69,7 +69,7 @@ That last line would look something like this written in Scheme:
 
 ```Scheme
 
-prefix xs ys = (and (eq (car x) (car y))
+prefix xs ys = (and (eq (car xs) (car ys))
 	                (prefix (cdr xs) (cdr ys)))
 					
 ```

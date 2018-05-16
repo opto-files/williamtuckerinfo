@@ -35,7 +35,7 @@
 <a class="sourceLine" id="cb4-4" data-line-number="4">prefix (x<span class="fu">:</span>xs) (y<span class="fu">:</span>ys) <span class="fu">=</span> (x<span class="fu">==</span>y) <span class="fu">&amp;&amp;</span> prefix xs ys</a></code></pre></div>
 <p>That last line would look something like this written in Scheme:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode scheme"><code class="sourceCode scheme"><a class="sourceLine" id="cb5-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">prefix xs ys <span class="kw">=</span> (<span class="kw">and</span> (eq (<span class="kw">car</span> x) (<span class="kw">car</span> y))</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">prefix xs ys <span class="kw">=</span> (<span class="kw">and</span> (eq (<span class="kw">car</span> xs) (<span class="kw">car</span> ys))</a>
 <a class="sourceLine" id="cb5-3" data-line-number="3">                    (prefix (<span class="kw">cdr</span> xs) (<span class="kw">cdr</span> ys)))</a>
 <a class="sourceLine" id="cb5-4" data-line-number="4">                    </a></code></pre></div>
 <p>If you are used to reading Scheme this isn’t difficult to read, but I’d argue the Haskell is easier on the eye for most people. Perhaps moreso once you are cons’ing things.</p>
