@@ -1,0 +1,52 @@
+<h1 id="haskell-road-to-logic-maths-and-programming-first-impressions">Haskell Road To Logic, Maths and Programming: First Impressions</h1>
+<p>To start my journey into studying Maths and Haskell I’ve chosen two resources. Firstly I am going to work through the lectures for MIT’s course <em>Mathematics for Computer Science</em> which are publically available (and seem to be the most accessible discrete maths introduction online. Secondly, to supplement some more Maths and learning the basics of Haskell I am using <a href="https://homepages.cwi.nl/~jve/HR/#Solutions"><strong>The Haskell Road to Logic, Maths and Programming - Doets &amp; van Eijck</strong></a>.</p>
+<p>I’ve just worked through the first chapter, which is a kind of getting-to-grips introduction to Haskell syntax and workflow. I found it very informative and well laid out (with only one exception) - it also had me thinking about my time in Scheme.</p>
+<h3 id="first-tasks">First Tasks</h3>
+<p>The book begins with you implementing some processes that determine the primality of a number, introducing types and guards. First of all I loved the guards syntax, and find it a touch more readable than Scheme’s cond statements (and a <em>hell</em> of a lot more readable than nested if’s).</p>
+<p>For comparison:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dt">Haskell</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">abs n <span class="fu">|</span> n <span class="fu">&gt;=</span> <span class="dv">0</span> <span class="fu">=</span>  n</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">      <span class="fu">|</span> n <span class="fu">&lt;</span><span class="dv">0</span>   <span class="fu">=</span> <span class="fu">-</span>n</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="dt">Scheme</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">(define (abs x)</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">  (cond ((<span class="fu">&lt;</span> x <span class="dv">0</span>) (<span class="fu">-</span> x))</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    ((<span class="fu">&gt;=</span> x <span class="dv">0</span>) <span class="dv">0</span>))))</a></code></pre></div>
+<p>This isn’t a huge difference, however cond statements were maybe the thing that most often had me stumbling over parentheses. If that sounds amateur-ish, I should point out now that I am not going to pretend to be good at programming and will point out all of the ameteur-ish problems I have.</p>
+<p>On the topic of my amateur-ness, one of the earliest functions the book has you write checks whether x % y = 0. It says:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb2-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">divides d n <span class="fu">=</span> rem n d <span class="fu">==</span> <span class="dv">0</span></a></code></pre></div>
+<p>I am <strong>awful</strong> for unnecessarily writing things like:</p>
+<pre><code>if (someFunc x == 0):
+    return True</code></pre>
+<p>And it is a habit I need to get out of. That’s the level I am starting from in this blog, so if anyone thought they were reading the musings of some rockstar developer think again.</p>
+<h3 id="types-and-sing-song-programming">Types and Sing-Song Programming</h3>
+<p>One of the things I most enjoy about writing Scheme is that after working through the MIT SICP course I found myself thinking out loud about what I was writing in a way that helped organize my thoughts between the parentheses. Defining a new function meant running through the jingle “I want to <em>define</em> the name <em>blah</em> to be the <em>process</em> (lambda) that takes an argument <em>x</em> and an argument <em>y</em> and gives me back …</p>
+<p>This was something new for me when I learned Scheme, perhaps because it was the first language in which I followed along with any serious kind of learning materials and so had heard a teacher work through declarations like that - however I think there is something to be said for this <em>“and gives me back…”</em> way of thinking through a function. It keeps your thinking more clear and connected to think “and gives me back the list whose first object is *some thing* and whose second object is *some other thing* - rather than the imperative style which thinks”take arguments x and y - do <strong>this</strong> to x and <strong>that</strong> to y - and then return these in a list“. Something small, that I just prefer. Maybe you think this is nonsense, if so, tell me.</p>
+<p>In Haskell I’ve got what I like about writing Scheme, plus this extra bit at the start which even more clearly defines my thinking going in. Now, someFunction is “the function that takes an Integer and an Integer and gives back a Boolean in which someFunction x y is the process that gives me back…”. This feels very agreeable to me.</p>
+<h3 id="xxs-vs-car-and-cdr">(x:xs) vs car and cdr</h3>
+<p>Something I was already ok with which I assume is a problem for lots of people coming to Haskell is that we are essentially dealing with tail-recursion all the time. In general terms you are defining processes which say “do this to the first item, and then carry on doing it to the rest”.</p>
+<p>In Scheme you can grab the first item of a list using (car list), and everything else in the list as (cdr list). I’m not sure whether I prefer the (x:xs) notation yet but I feel like I might well do in the future. To compare the two let’s look at another example from The Haskell Road’s first chapter, that checks whether a string is the prefix of another string. In Haskell it looks like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">prefix [] ys         <span class="fu">=</span> <span class="dt">True</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">prefix (x<span class="fu">:</span>xs) []     <span class="fu">=</span> <span class="dt">False</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">prefix (x<span class="fu">:</span>xs) (y<span class="fu">:</span>ys) <span class="fu">=</span> (x<span class="fu">==</span>y) <span class="fu">&amp;&amp;</span> prefix xs ys</a></code></pre></div>
+<p>That last line would look something like this written in Scheme:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode scheme"><code class="sourceCode scheme"><a class="sourceLine" id="cb5-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">prefix xs ys <span class="kw">=</span> (<span class="kw">and</span> (eq (<span class="kw">car</span> x) (<span class="kw">car</span> y))</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">                    (prefix (<span class="kw">cdr</span> xs) (<span class="kw">cdr</span> ys)))</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">                    </a></code></pre></div>
+<p>If you are used to reading Scheme this isn’t difficult to read, but I’d argue the Haskell is easier on the eye for most people. Perhaps moreso once you are cons’ing things.</p>
+<p>i.e.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb6-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">map f (x<span class="fu">:</span>xs) <span class="fu">=</span> (f x) <span class="fu">:</span> (map f xs)</a></code></pre></div>
+<p>vs.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scheme"><code class="sourceCode scheme"><a class="sourceLine" id="cb7-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">(<span class="kw">define</span><span class="fu"> map</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">  (<span class="kw">lambda</span> (f xs)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">    (<span class="kw">cons</span> (f (<span class="kw">car</span> xs)) (map f (<span class="kw">cdr</span> xs)))))</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">    </a></code></pre></div>
+<h3 id="going-forward">Going Forward</h3>
+<p>The type system is clearly the newest thing here for someone coming from Scheme, and it is something I’m really interested to get in to. Some naive things I’m interested in is making objects of essentially the same type incompatible with each other, so I can check whether I’m really getting the values I think into functions. For example I use a whole bunch of 2D vectors when working on my generative artwork - and they might hold a Position, Acceleration, Velocity, say. Obviously I don’t want to add Accelerations to my Positions, I only want to add Veclocities. All of them would have the type (a, a) though, so could I check that the tuple I have is a Velocity or Acceleration? I hope so, and I’m excited to find out more about how types are used in practice.</p>
